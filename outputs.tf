@@ -1,3 +1,7 @@
+output "stream_analytics_stream_input_eventhub_v2s_id" {
+  description = "Map of id values across all stream_analytics_stream_input_eventhub_v2s, keyed the same as var.stream_analytics_stream_input_eventhub_v2s"
+  value       = { for k, v in azurerm_stream_analytics_stream_input_eventhub_v2.stream_analytics_stream_input_eventhub_v2s : k => v.id }
+}
 output "stream_analytics_stream_input_eventhub_v2s_authentication_mode" {
   description = "Map of authentication_mode values across all stream_analytics_stream_input_eventhub_v2s, keyed the same as var.stream_analytics_stream_input_eventhub_v2s"
   value       = { for k, v in azurerm_stream_analytics_stream_input_eventhub_v2.stream_analytics_stream_input_eventhub_v2s : k => v.authentication_mode }
