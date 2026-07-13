@@ -25,7 +25,7 @@ EOT
     name                                           = string
     servicebus_namespace                           = string
     stream_analytics_job_id                        = string
-    authentication_mode                            = optional(string) # Default: "ConnectionString"
+    authentication_mode                            = optional(string)
     eventhub_consumer_group_name                   = optional(string)
     partition_key                                  = optional(string)
     shared_access_policy_key                       = optional(string)
