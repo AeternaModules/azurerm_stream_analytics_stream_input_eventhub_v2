@@ -24,7 +24,7 @@ output "stream_analytics_stream_input_eventhub_v2s_partition_key" {
 }
 output "stream_analytics_stream_input_eventhub_v2s_serialization" {
   description = "Map of serialization values across all stream_analytics_stream_input_eventhub_v2s, keyed the same as var.stream_analytics_stream_input_eventhub_v2s"
-  value       = { for k, v in azurerm_stream_analytics_stream_input_eventhub_v2.stream_analytics_stream_input_eventhub_v2s : k => v.serialization if v.serialization != null && length(v.serialization) > 0 }
+  value       = { for k, v in azurerm_stream_analytics_stream_input_eventhub_v2.stream_analytics_stream_input_eventhub_v2s : k => one(v.serialization) if v.serialization != null && length(v.serialization) > 0 }
 }
 output "stream_analytics_stream_input_eventhub_v2s_servicebus_namespace" {
   description = "Map of servicebus_namespace values across all stream_analytics_stream_input_eventhub_v2s, keyed the same as var.stream_analytics_stream_input_eventhub_v2s"
